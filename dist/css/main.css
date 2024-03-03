@@ -9,6 +9,7 @@
 
   --fw-bold: 900;
 
+  --fs-90: 16px;
   --fs-100: 18px;
   --fs-200: 20px;
   --fs-300: 28px;
@@ -77,6 +78,11 @@
 
 .semi-cloudy-img {
   background-image: url("../images/partly-cloudy.webp");
+}
+
+
+.text-size-small-x {
+  font-size: var(--fs-90);
 }
 
 .text-size-small {
