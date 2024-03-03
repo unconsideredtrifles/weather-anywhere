@@ -140,15 +140,6 @@
   cursor: pointer;
 }
 
-.display-flex {
-  display: flex;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-
 /* Blocks */ 
 
 .top-section {
@@ -195,6 +186,9 @@
 }
 
 .weather-result {
+  display: flex;
+  flex-direction: column;
+
   width: 130px;
   border-radius: 1.5rem;
   padding: 1rem;
