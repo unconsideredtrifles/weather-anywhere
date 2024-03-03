@@ -226,3 +226,16 @@
 .weather-prediction-title {
   grid-area: 1 / 1 / 2 / 4;
 }
+
+
+/* Exceptions */
+
+.weather-result[data-key="smaller-card"] {
+  width: auto;
+  min-width: 130px;
+
+  .weather-result-img {
+    flex-basis: 90px;
+  }
+
+}
