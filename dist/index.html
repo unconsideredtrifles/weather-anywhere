@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- <script src="scripts/main.js"></script> -->
+</head>
+<body>
+  
+  <header class="[ top-section-layout ] [ top-section ]">
+    <div class="[ banner ]">
+      <div class="[ text-size-large-xx text-white text-center ] [ banner-title ]">Weather Anywhere</div>
+      <div class="[ text-size-normal text-white text-center ] [ banner-text ]">Easy and fast weather lookup. At the tip of your fingers.</div>
+    </div>
+    <main class="[ display-flex box-center ] [ search-bar ]">
+      <input spellcheck=false class="[ no-border text-size-normal ] [ search-input ]" type="search">
+      <button class="[ no-border text-white bg-dark-blue text-size-normal pointer-cursor ] [ search-btn ]">Search</button>
+    </main>
+  </header>
+
+  <div class="[ body-section-layout ] [ body-section ]">
+    <div class="[ text-size-large-x text-bold text-dark-blue ] [ city-name ]">New York</div>
+    <div class="[ current-weather ]">
+      <h3 class="[ text-grey text-size-large text-center ] [ weather-title ]">Current Weather</h3>
+      <div class="[ display-flex flex-column box-center ] [ weather-result ]">
+        <div class="[ text-center text-size-normal text-bold letter-spacing-1 ] [ weather-result-text ]">Sunny</div>
+        <div class="[ sunny-img ] [ weather-result-img ]"></div>
+        <div class="[ text-center text-size-small ] [ weather-temperature ]">25°C</div>
+      </div>
+    </div>
+    <div class="[ weather-prediction ]">
+      <h3 class="[ text-grey text-size-medium ] [ weather-prediction-title ]">Weather Prediction for Next 3 Days</h4>
+      <div class="[ weather-result ]">
+        <div class="[ text-center ] [ weather-result-text ]">Cloudy</div>
+        <div class="[ cloudy-img ] [ weather-result-img ]"></div>
+        <div class="[ text-center ] [ weather-temperature ]">20°C</div>
+      </div>
+      <div class="[ weather-result ]">
+        <div class="[ text-center ] [ weather-result-text ]">Semi Cloudy</div>
+        <div class="[ semi-cloudy-img ] [ weather-result-img ]"></div>
+        <div class="[ text-center ] [ weather-temperature ]">22°C</div>
+      </div>
+      <div class="[ weather-result ]">
+        <div class="[ text-center ] [ weather-result-text ]">Sunny</div>
+        <div class="[ sunny-img ] [ weather-result-img ]"></div>
+        <div class="[ text-center ] [ weather-temperature ]">25°C</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
