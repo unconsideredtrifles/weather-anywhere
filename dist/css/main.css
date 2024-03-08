@@ -217,7 +217,7 @@
 
 .weather-result-img {
   flex-shrink: 0;
-  flex-basis: 100px;
+  flex-basis: 120px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
   <link rel="stylesheet" href="css/main.css">
-  <!-- <script src="scripts/main.js"></script> -->
+  <script defer src="scripts/main.js"></script>
 </head>
 <body>
   
@@ -14,10 +14,10 @@
       <div class="[ text-size-large-xx text-white text-center ] [ banner-title ]">Weather Anywhere</div>
       <div class="[ text-size-normal text-white text-center ] [ banner-text ]">Easy and fast weather lookup. At the tip of your fingers.</div>
     </div>
-    <main class="[ display-flex box-center ] [ search-bar ]">
+    <form class="[ display-flex box-center ] [ search-bar ]">
       <input spellcheck=false class="[ no-border text-size-normal ] [ search-input ]" type="search">
       <button class="[ no-border text-white bg-dark-blue text-size-normal pointer-cursor ] [ search-btn ]">Search</button>
-    </main>
+    </form>
   </header>
 
   <div class="[ body-section-layout ] [ body-section ]">
@@ -26,7 +26,7 @@
       <h3 class="[ text-grey text-size-large text-center ] [ weather-title ]">Current Weather</h3>
       <div class="[ box-center ] [ weather-result ]">
         <div class="[ text-center text-size-normal text-bold letter-spacing-1 ] [ weather-result-text ]">Sunny</div>
-        <div class="[ sunny-img ] [ weather-result-img ]"></div>
+        <div class="[ weather-result-img ]"></div>
         <div class="[ text-center text-size-small ] [ weather-temperature ]">25°C</div>
       </div>
     </div>

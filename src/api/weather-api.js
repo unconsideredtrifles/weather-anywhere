@@ -10,8 +10,17 @@ function enhanceIconSize(iconURL) {
 function getWeatherStatus(day) {
     const status = day.condition.text;
     const icon = enhanceIconSize(day.condition.icon);
+    const tempC = (day.temp_c) ? day.temp_c : day.avgtemp_c;
+    const tempF = (day.temp_f) ? day.temp_f : day.avgtemp_f;
 
-    return { status, icon };
+    return { 
+      status, 
+      icon, 
+      temp: {
+        celsius: `${tempC}°C`,
+        fahrenheit: `${tempF}°F`,
+      },
+    };
 }
 
 
