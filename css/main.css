@@ -1,19 +1,23 @@
 :root {
   --clr-primary-100: #01283c;
+  --clr-primary-120: #031147;
+  --clr-primary-150: #051245;
   --clr-primary-200: #0b5377;
+  --clr-primary-250: #4a516d;
   --clr-primary-300: #fff;
 
   --clr-secondary-100: #565656;
   --clr-secondary-200: #6c6c6c;
-  --clr-secondary-300: #969696;
+  --clr-secondary-300: #728087;
 
+  --fw-semi-bold: 700;
   --fw-bold: 900;
 
   --fs-90: 16px;
   --fs-100: 18px;
   --fs-200: 20px;
   --fs-300: 28px;
-  --fs-400: 33px;
+  --fs-400: 40px;
   --fs-500: 45px;
   --fs-600: 60px;
 }
@@ -40,26 +44,36 @@
 
 .body-section-layout {
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
+  grid-template-columns: 1.4fr 2.5fr;
   grid-template-rows: max-content 1fr;
+  padding-left: 15%;
+}
+
+.current-weather {
+  padding-left: 30%;
 }
 
 .current-weather > *:first-child {
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 
 .weather-prediction {
   display: grid;
   grid-template-columns: repeat(3, max-content);
-  grid-template-rows: max-content 1fr;
+  grid-template-rows: repeat(2, max-content) 1fr;
+  padding-left: 1.5rem;
 }
 
 .weather-prediction > *:first-child {
-  margin: 1rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .weather-prediction > *:nth-child(n + 2) {
   margin-right: 2rem;
+}
+
+.weather-prediction > .weather-date {
+  margin-bottom: 0.8rem; 
 }
 
 /* Utilites */
@@ -97,6 +111,10 @@
   font-size: var(--fs-200);
 }
 
+.text-size-normal-x {
+  font-size: 26px;
+}
+
 .text-size-medium {
   font-size: var(--fs-300);
 }
@@ -121,8 +139,20 @@
   color: var(--clr-primary-300);
 }
 
+.text-light-blue {
+  color: var(--clr-primary-250);
+}
+
 .text-dark-blue {
-  color: var(--clr-primary-100);
+  color: var(--clr-primary-150);
+}
+
+.text-darker-blue {
+  color: var(--clr-primary-120);
+}
+
+.text-semi-bold {
+  font-weight: var(--fw-semi-bold);
 }
 
 .text-bold {
@@ -195,12 +225,8 @@
 }
 
 .city-name {
-  padding: 2rem 0 1rem 3rem;
+  padding: 2rem 0 1.5rem 3rem;
   grid-area: 1 / 1 / 2 / 3;
-}
-
-.weather-prediction {
-  padding-left: 2rem;
 }
 
 .weather-result {
@@ -231,12 +257,17 @@
   grid-area: 1 / 1 / 2 / 4;
 }
 
+.weather-date {
+  text-transform: capitalize;
+}
+
 
 /* Exceptions */
 
 .weather-result[data-key="smaller-card"] {
   width: auto;
   min-width: 130px;
+  grid-row: -2 / -1;
 
   .weather-result-img {
     flex-basis: 90px;
