@@ -19,6 +19,9 @@ function searchCityWeather(city) {
 }
 
 
+searchCityWeather('New York');
+
+
 const searchBar = document.getElementsByClassName('search-bar')[0];
 searchBar.addEventListener('submit', (e) => {
   const city = e.currentTarget.querySelector('.search-input').value;
