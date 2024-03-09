@@ -222,10 +222,6 @@
   flex-basis: 110px;
 }
 
-.body-section {
-  padding-bottom: 5rem; 
-}
-
 .city-name {
   padding: 2rem 0 1.5rem 3rem;
   grid-area: 1 / 1 / 2 / 3;
