@@ -12,9 +12,9 @@ function searchCityWeather(city) {
     displayCityName(city);
     setCurrentWeather(info.currentWeather);
     setWeatherForecasts(info.weatherForecasts);
-  })/*.catch((error) => {
+  }).catch((error) => {
     console.log(`"${error}"`);
-  });*/
+  });
 }
 
 
