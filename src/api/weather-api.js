@@ -1,4 +1,5 @@
 import {apiDomain, apiEndpoint, apiKey} from './api-config';
+import convertDate2Wday from '../date-util.js'
 
 
 function enhanceIconSize(iconURL) {
@@ -27,7 +28,11 @@ function getWeatherStatus(day) {
 function parseRelevantInfo(weatherInfo) {
   let currentWeather = getWeatherStatus(weatherInfo.current);
   let weatherForecasts = weatherInfo.forecast.forecastday.map((eachForecastDay) => {
-    return getWeatherStatus(eachForecastDay.day);
+    return {
+      date: eachForecastDay.date,
+      weekDay: convertDate2Wday(eachForecastDay.date),
+      ...getWeatherStatus(eachForecastDay.day),
+    };
   });
 
   return { currentWeather, weatherForecasts };

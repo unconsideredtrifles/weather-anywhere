@@ -6,9 +6,9 @@ function searchCityWeather(city) {
   getWeatherInfo(city).then((info) => {
     setCurrentWeather(info.currentWeather);
     setWeatherForecasts(info.weatherForecasts);
-  }).catch((error) => {
+  })/*.catch((error) => {
     console.log(`"${error}"`);
-  });
+  });*/
 }
 
 
