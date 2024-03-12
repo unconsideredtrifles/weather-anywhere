@@ -92,6 +92,10 @@
   position: relative;
 }
 
+.display-none {
+  display: none;
+}
+
 .display-flex {
   display: flex;
 }
@@ -206,6 +210,11 @@
 }
 
 /* Blocks */ 
+
+.loading-indicator {
+  padding-top: 3rem;
+  padding-left: 20%;
+}
 
 .top-section {
   background-position-x: 53%;

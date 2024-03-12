@@ -1,5 +1,6 @@
 import getWeatherInfo from './api/weather-api';
 import  { setCurrentWeather, setWeatherForecasts } from './weather-util.js';
+import { startLoading, stopLoading } from './loading-component.js';
 
 
 function displayCityName(city) {
@@ -9,7 +10,9 @@ function displayCityName(city) {
 
 
 function searchCityWeather(city) {
+  startLoading();
   getWeatherInfo(city).then((info) => {
+    stopLoading();
     displayCityName(city);
     setCurrentWeather(info.currentWeather);
     setWeatherForecasts(info.weatherForecasts);
