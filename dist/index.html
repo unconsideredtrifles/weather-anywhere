@@ -21,17 +21,14 @@
   </header>
 
   <div class="[ body-section-layout ]">
-    <div class="[ text-size-large text-bold text-grey ] [ city-name ]"></div>
     <div class="[ current-weather ]">
-      <h3 class="[ text-light-blue text-size-medium text-center ] [ weather-title ]">Current Weather</h3>
-      <div class="[ box-center ] [ weather-result ]">
-        <div class="[ text-darker-blue text-center text-size-normal text-bold letter-spacing-1 ] [ weather-result-text ]"></div>
-        <div class="[ weather-result-img ]"></div>
-        <div class="[ text-center text-size-small text-dark-blue text-semi-bold ] [ weather-temperature ]"></div>
-      </div>
+      <div data-key="current" class="[ text-center text-size-large-xx text-bold text-grey ] [ city-name ]"></div>
+      <div data-key="current" class="[ text-center text-darker-blue text-size-medium text-bold letter-spacing-1 ] [ weather-result-text ]"></div>
+      <div data-key="current" class="[ weather-icon ]"></div>
+      <div data-key="current" class="[ text-center text-size-normal-x text-dark-blue text-semi-bold ] [ weather-temperature ]"></div>
     </div>
-    <div class="[ weather-prediction ]">
-      <h3 class="[ text-light-blue text-size-normal-x ] [ weather-prediction-title ]">Weather Prediction for Next 3 Days</h4>
+    <div class="[ weather-prediction ] [ position-relative ]">
+      <h3 class="[ text-light-blue text-size-medium ] [ weather-prediction-title ]">Weather Prediction for Next 3 Days</h4>
       <div class="[ text-center text-semi-bold text-dark-blue ] [ weather-date ]">
         <time></time><br><span></span>
       </div>
@@ -41,19 +38,19 @@
       <div class="[ text-center text-semi-bold text-dark-blue ] [ weather-date ]" >
         <time></time><br><span></span>
       </div>
-      <div data-key="smaller-card" class="[ align-start ] [ weather-result ]">
-        <div class="[ text-center text-bold text-size-small-x text-darker-blue ] [ weather-result-text ]"></div>
-        <div class="[ weather-result-img ]"></div>
+      <div class="[ align-start ] [ weather-card ]">
+        <div class="[ text-center text-bold text-size-normal text-darker-blue ] [ weather-result-text ]"></div>
+        <div class="[ weather-icon ]"></div>
         <div class="[ text-center text-size-small-x text-dark-blue text-semi-bold ] [ weather-temperature ]"></div>
       </div>
-      <div data-key="smaller-card" class="[ align-start ] [ weather-result ]">
-        <div class="[ text-center text-bold text-size-small-x text-darker-blue ] [ weather-result-text ]"></div>
-        <div class="[ weather-result-img ]"></div>
+      <div class="[ align-start ] [ weather-card ]">
+        <div class="[ text-center text-bold text-size-normal text-darker-blue ] [ weather-result-text ]"></div>
+        <div class="[ weather-icon ]"></div>
         <div class="[ text-center text-size-small-x text-dark-blue text-semi-bold ] [ weather-temperature ]"></div>
       </div>
-      <div data-key="smaller-card" class="[ align-start ] [ weather-result ]">
-        <div class="[ text-center text-bold text-size-small-x text-darker-blue ] [ weather-result-text ]"></div>
-        <div class="[ weather-result-img ]"></div>
+      <div class="[ align-start ] [ weather-card ]">
+        <div class="[ text-center text-bold text-size-normal text-darker-blue ] [ weather-result-text ]"></div>
+        <div class="[ weather-icon ]"></div>
         <div class="[ text-center text-size-small-x text-dark-blue text-semi-bold ] [ weather-temperature ]"></div>
       </div>
     </div>

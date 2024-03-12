@@ -4,7 +4,7 @@ import  { setCurrentWeather, setWeatherForecasts } from './weather-util.js';
 
 function displayCityName(city) {
   const cityName = document.getElementsByClassName('city-name')[0];
-  cityName.textContent = `${city} City's`;
+  cityName.textContent = city;
 }
 
 

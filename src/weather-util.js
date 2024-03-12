@@ -12,7 +12,7 @@ function setWeatherInfo(weatherCategory, weatherInfo) {
   const weatherStatus = weatherCategory.querySelector('.weather-result-text');
   weatherStatus.textContent = weatherInfo.status;
 
-  const weatherStatusImg = weatherCategory.querySelector('.weather-result-img');
+  const weatherStatusImg = weatherCategory.querySelector('.weather-icon');
   weatherStatusImg.style.backgroundImage = `url("${weatherInfo.icon}")`;
 
   const weatherTemp = weatherCategory.querySelector('.weather-temperature');
@@ -31,7 +31,7 @@ function setWeatherForecasts(forecasts) {
   const category = document.getElementsByClassName('weather-prediction')[0];
 
   Array.from(
-    category.getElementsByClassName('weather-result'),
+    category.getElementsByClassName('weather-card'),
     (eachResult, idx) => {
       setWeatherDate(weatherDates[idx], forecasts[idx], !idx);
       setWeatherInfo(eachResult, forecasts[idx]);
