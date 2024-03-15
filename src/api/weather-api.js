@@ -40,18 +40,25 @@ function parseRelevantInfo(weatherInfo) {
 
 
 async function callWeatherAPI(apiURL) {
+  let res;
   try {
-    const res = await fetch(apiURL);
+    res = await fetch(apiURL);
     if (!res.ok) {
       throw new Error('Bad HTTP Response');
     }
     const jsonOutput = await res.json();
     return jsonOutput;
   } catch ({message}) {
-    if (message === 'Bad HTTP Response') {
-      throw new Error(`${message}`);
+    if (message != 'Bad HTTP Response') {
+      throw new Error('Network error or permission issue');
     }
-    throw new Error('Network error or permission issue');
+
+    const contentType = res.headers.get("Content-Type");
+    if (contentType === "application/json") {
+      const jsonBody = await res.json();
+      throw new Error(jsonBody.error.message);
+    }
+    throw new Error(`${message}`);
   }
 }
 
