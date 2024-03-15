@@ -4,6 +4,11 @@ import { startLoading, stopLoading } from './components/loading-handler';
 import displayErrorMsg from './components/error-handler';
 
 
+const clearSearchForm = function clearSearchForm() {
+  searchInput.value = '';
+}
+
+
 function displayCityName(city) {
   const cityName = document.getElementsByClassName('city-name')[0];
   cityName.textContent = city;
@@ -30,6 +35,7 @@ const searchBar = document.getElementsByClassName('search-bar')[0];
 searchBar.addEventListener('submit', (e) => {
   const city = e.currentTarget.querySelector('.search-input').value;
   searchCityWeather(city);
+  clearSearchForm();
   e.preventDefault();
 });
 
