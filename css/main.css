@@ -156,6 +156,10 @@
   color: var(--clr-primary-300);
 }
 
+.text-error {
+  color: #c00000;
+}
+
 .text-light-blue {
   color: var(--clr-primary-250);
 }
@@ -211,7 +215,7 @@
 
 /* Blocks */ 
 
-.loading-indicator {
+.error-text, .loading-indicator {
   padding-top: 3rem;
   padding-left: 20%;
 }
