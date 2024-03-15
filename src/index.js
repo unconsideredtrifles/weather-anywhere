@@ -1,6 +1,7 @@
 import getWeatherInfo from './api/weather-api';
-import  { setCurrentWeather, setWeatherForecasts } from './weather-util.js';
-import { startLoading, stopLoading } from './loading-component.js';
+import  { setCurrentWeather, setWeatherForecasts } from './weather-util';
+import { startLoading, stopLoading } from './components/loading-handler';
+import displayErrorMsg from './components/error-handler';
 
 
 function displayCityName(city) {
@@ -17,7 +18,7 @@ function searchCityWeather(city) {
     setCurrentWeather(info.currentWeather);
     setWeatherForecasts(info.weatherForecasts);
   }).catch((error) => {
-    console.log(`"${error}"`);
+    displayErrorMsg(`"${error}"`);
   });
 }
 
