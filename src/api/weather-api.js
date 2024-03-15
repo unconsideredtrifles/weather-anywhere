@@ -42,13 +42,17 @@ function parseRelevantInfo(weatherInfo) {
 async function callWeatherAPI(apiURL) {
   let res;
   try {
-    res = await fetch(apiURL);
+    res = await fetch(apiURL, { signal: AbortSignal.timeout(5000) });
     if (!res.ok) {
       throw new Error('Bad HTTP Response');
     }
     const jsonOutput = await res.json();
     return jsonOutput;
-  } catch ({message}) {
+  } catch ({name, message}) {
+    if (name === 'AbortError')  {
+      throw new Error('Connection timeout');
+    }
+
     if (message != 'Bad HTTP Response') {
       throw new Error('Network error or permission issue');
     }
