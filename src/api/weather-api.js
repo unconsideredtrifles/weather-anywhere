@@ -35,7 +35,11 @@ function parseRelevantInfo(weatherInfo) {
     };
   });
 
-  return { currentWeather, weatherForecasts };
+  return { 
+            currentWeather, 
+            weatherForecasts, 
+            city: weatherInfo.location.name,
+          };
 }
 
 

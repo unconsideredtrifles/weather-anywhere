@@ -14,10 +14,19 @@ function displayCityName(city) {
   cityName.textContent = city;
 }
 
+const checkIfExactCity = function checkIfExactCity(givenCity, returnedCity) {
+  return (
+    givenCity.trim().toLowerCase() === returnedCity.trim().toLowerCase()
+  );
+};
+
 
 function searchCityWeather(city) {
   startLoading();
   getWeatherInfo(city).then((info) => {
+    if (!checkIfExactCity(city, info.city)) {
+      throw new Error('No matching location found.');
+    }
     stopLoading();
     displayCityName(city);
     setCurrentWeather(info.currentWeather);
