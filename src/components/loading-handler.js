@@ -1,4 +1,4 @@
-import { showLoadingComponent, hideLoadingComponent, showBodyComponent} from './component-controller';
+import { showLoadingComponent, hideLoadingComponent, showBodyComponent } from './component-controller';
 
 
 const startLoading = function startLoading() {
@@ -9,10 +9,10 @@ const startLoading = function startLoading() {
 const stopLoading = function stopLoading() {
   hideLoadingComponent();
   showBodyComponent();
-}
+};
 
 
 export {
   startLoading,
-  stopLoading
+  stopLoading,
 };

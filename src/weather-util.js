@@ -1,14 +1,23 @@
-function setWeatherDate(dateEl, dateInfo, isToday = false) {
-  dateEl.children[0].textContent = dateInfo.date;
-  dateEl.children[0].setAttribute('datetime', dateInfo.date);
+const setWeatherDate = function setWeatherDate(
+  dateComponent,
+  info,
+  isToday = false,
+) {
+  const dateInfo = info;
+  const dateEl = dateComponent.children[0];
+  dateEl.textContent = info.date;
+  dateEl.setAttribute('datetime', info.date);
+
   if (isToday) {
     dateInfo.weekDay = `Today/${dateInfo.weekDay}`;
   }
-  dateEl.children[2].textContent = `(${dateInfo.weekDay})`;
-}
+
+  const weekDayEl = dateComponent.children[2];
+  weekDayEl.textContent = `(${dateInfo.weekDay})`;
+};
 
 
-function setWeatherInfo(weatherCategory, weatherInfo) {
+const setWeatherInfo = function setWeatherInfo(weatherCategory, weatherInfo) {
   const weatherStatus = weatherCategory.querySelector('.weather-result-text');
   weatherStatus.textContent = weatherInfo.status;
 
@@ -17,27 +26,26 @@ function setWeatherInfo(weatherCategory, weatherInfo) {
 
   const weatherTemp = weatherCategory.querySelector('.weather-temperature');
   weatherTemp.textContent = weatherInfo.temp.celsius;
-}
+};
 
 
-function setCurrentWeather(weatherInfo) {
+const setCurrentWeather = function setCurrentWeather(weatherInfo) {
   const category = document.getElementsByClassName('current-weather')[0];
   setWeatherInfo(category, weatherInfo);
-}
+};
 
 
-function setWeatherForecasts(forecasts) {
+const setWeatherForecasts = function setWeatherForecasts(forecasts) {
   const weatherDates = [...document.getElementsByClassName('weather-date')];
   const category = document.getElementsByClassName('weather-prediction')[0];
 
-  Array.from(
-    category.getElementsByClassName('weather-card'),
-    (eachResult, idx) => {
-      setWeatherDate(weatherDates[idx], forecasts[idx], !idx);
-      setWeatherInfo(eachResult, forecasts[idx]);
-    },
-  );
-}
+  const categories = [...category.getElementsByClassName('weather-card')];
+  categories.forEach((eachResult, idx) => {
+    setWeatherDate(weatherDates[idx], forecasts[idx], !idx);
+    setWeatherInfo(eachResult, forecasts[idx]);
+  });
+};
+
 
 export {
   setCurrentWeather,

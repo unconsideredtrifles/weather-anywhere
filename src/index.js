@@ -1,18 +1,26 @@
 import getWeatherInfo from './api/weather-api';
-import  { setCurrentWeather, setWeatherForecasts } from './weather-util';
+import { setCurrentWeather, setWeatherForecasts } from './weather-util';
 import { startLoading, stopLoading } from './components/loading-handler';
 import displayErrorMsg from './components/error-handler';
 
 
+const searchInput = document.getElementsByClassName('search-input')[0];
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.currentTarget.value.length === 0) {
+    e.preventDefault();
+  }
+});
+
+
 const clearSearchForm = function clearSearchForm() {
   searchInput.value = '';
-}
+};
 
 
-function displayCityName(city) {
+const displayCityName = function displayCityName(city) {
   const cityName = document.getElementsByClassName('city-name')[0];
   cityName.textContent = city;
-}
+};
 
 
 const checkIfExactCity = function checkIfExactCity(givenCity, returnedCity) {
@@ -22,7 +30,7 @@ const checkIfExactCity = function checkIfExactCity(givenCity, returnedCity) {
 };
 
 
-function searchCityWeather(city) {
+const searchCityWeather = function searchCityWeather(city) {
   startLoading();
   getWeatherInfo(city).then((info) => {
     if (!checkIfExactCity(city, info.city)) {
@@ -35,7 +43,7 @@ function searchCityWeather(city) {
   }).catch((error) => {
     displayErrorMsg(`"${error}"`);
   });
-}
+};
 
 
 searchCityWeather('New York');
@@ -48,12 +56,3 @@ searchBar.addEventListener('submit', (e) => {
   clearSearchForm();
   e.preventDefault();
 });
-
-
-const searchInput = document.getElementsByClassName('search-input')[0];
-searchInput.addEventListener('keydown', (e) => {
-  if (e.key === "Enter" && e.currentTarget.value.length === 0) {
-    e.preventDefault();
-  }
-});
-
