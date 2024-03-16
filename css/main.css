@@ -13,6 +13,7 @@
   --fw-semi-bold: 700;
   --fw-bold: 900;
 
+  --fs-80: 15px;
   --fs-90: 16px;
   --fs-100: 18px;
   --fs-200: 20px;
@@ -245,6 +246,7 @@
 }
 
 .search-input::-webkit-input-placeholder {
+  font-size: var(--fs-80);
   color: #929292;
 }
 
@@ -268,12 +270,12 @@
   border-radius: 1.5rem;
   padding: 1rem;
 
-  box-shadow: 0px 3px 6px 6px rgb(0 0 0 / 0.15);
+  box-shadow: 0px 3px 8px 6px rgb(0 0 0 / 0.15);
   cursor: pointer;
 }
 
 .weather-card:hover {
-  box-shadow: 0px 2px 6px 6px rgb(0 0 0 / 0.2);
+  box-shadow: 0px 2px 8px 6px rgb(0 0 0 / 0.2);
 }
 
 .weather-icon {
@@ -318,12 +320,12 @@
   margin-right: 0.5rem;
 
   background-size: 80%;
-  box-shadow: 0px 2px 5px 6px rgb(0 0 0 / 0.15);
+  box-shadow: 0px 2px 8px 6px rgb(0 0 0 / 0.15);
   cursor: pointer;
 }
 
 .weather-icon[data-key="current"]:hover {
-  box-shadow: 0px 2px 5px 6px rgb(0 0 0 / 0.2);
+  box-shadow: 0px 2px 8px 6px rgb(0 0 0 / 0.2);
 }
 
 .weather-temperature[data-key="current"] {
