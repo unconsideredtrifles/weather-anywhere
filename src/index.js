@@ -14,6 +14,7 @@ function displayCityName(city) {
   cityName.textContent = city;
 }
 
+
 const checkIfExactCity = function checkIfExactCity(givenCity, returnedCity) {
   return (
     givenCity.trim().toLowerCase() === returnedCity.trim().toLowerCase()
