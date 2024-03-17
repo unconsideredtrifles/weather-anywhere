@@ -7,8 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/scripts'),
   },
 
-  mode: 'development',
-  devtool: 'inline-source-map',
+  mode: "production",
 
   devServer: {
     static: './dist',
