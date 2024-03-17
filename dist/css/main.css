@@ -214,6 +214,20 @@
   align-self: start;
 }
 
+.spin-animation { 
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Blocks */ 
 
 .error-text, .loading-indicator {
@@ -302,6 +316,17 @@
 
 .weather-date {
   text-transform: capitalize;
+}
+
+.loading-spinner {
+  display: inline-block;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid var(--clr-primary-150);
+  border-bottom-color: transparent;
+  margin-left: 0.5rem;
 }
 
 
